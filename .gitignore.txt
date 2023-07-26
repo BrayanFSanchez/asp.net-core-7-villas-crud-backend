@@ -1,76 +1,59 @@
-# Compiled files
-*.dll
-*.exe
-*.pdb
-
-# Logs
-*.log
-logs/
-
-# NuGet packages
-*.nupkg
-packages/
-
-# Build results
-/bin/
-/obj/
-
-# User-specific files
-*.userprefs
+# Ignore the bin and obj directories at the solution level
+*.sln
+**/*.sln
 *.suo
+**/*.suo
 *.user
-*.sln.docstates
-
-# Visual Studio Code settings
-.vscode/
-
-# Visual Studio files
-*.vs/
-*.vscode/
+**/*.user
+*.userprefs
+**/*.userprefs
+*.vs
+**/*.vs
+*.vscode
+**/*.vscode
 *.vssscc
+**/*.vssscc
 *.vspscc
+**/*.vspscc
 *.vsconfig
+**/*.vsconfig
+*.sln.DotSettings.user
+**/*.sln.DotSettings.user
 *.sln.ide
+**/*.sln.ide
+*.sln.iml
+**/*.sln.iml
+*.sln.idea
+**/*.sln.idea
+*.resharper
+**/*.resharper
+*.ReSharper*
+**/*.ReSharper*
+*.cache
+**/*.cache
+*.builds
+**/*.builds
+*.publish
+**/*.publish
+*/TestResults
+**/TestResults
+*/node_modules
+**/node_modules
+npm-debug.log*
+**/npm-debug.log*
 
-# macOS-specific files
+# Ignore Visual Studio temporary files
+[Tt]humbs.db
+desktop.ini
+
+# Ignore macOS specific files
 .DS_Store
 
-# Windows thumbnail cache files
-Thumbs.db
-
-# Node.js and npm
-node_modules/
-npm-debug.log*
-
-# .NET Core
-project.lock.json
-project.assets.json
-*.cache
-*.builds
-*.publish
-
-# MSTest test Results
-TestResults/
-
-# Resharper
-_resharper*
-*.ReSharper*
-*.sln.DotSettings.user
-
-# Rider
-.idea/
+# Ignore Rider specific files
+.idea
 *.sln.iml
 *.sln.idea
 
-# User secrets
+# Ignore user secrets
 secrets.json
 *.user.secrets
-
-# Environment-specific files
-appsettings.Development.json
-appsettings.Staging.json
-appsettings.Production.json
-
-# Temporary files
-*.tmp
-*.bak
