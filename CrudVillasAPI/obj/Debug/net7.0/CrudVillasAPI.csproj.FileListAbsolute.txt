@@ -31,3 +31,7 @@ C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\obj
 C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\obj\Debug\net7.0\CrudVillasAPI.pdb
 C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\obj\Debug\net7.0\CrudVillasAPI.genruntimeconfig.cache
 C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\obj\Debug\net7.0\ref\CrudVillasAPI.dll
+C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Master-Race\Documents\Repositorios\dot-net\CrudVillas\CrudVillasAPI\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

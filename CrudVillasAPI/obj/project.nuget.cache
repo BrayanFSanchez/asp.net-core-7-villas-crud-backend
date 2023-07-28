@@ -1,12 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "cWjHmtFB5+mjNKJW4l0Kwb0ZLTTQpKy4kJtnnGAUADGP41qqoUhhyS5guA/p0P1PKCgD75JsjQkLAN67oScqUg==",
+  "dgSpecHash": "IDlwe0IJBZtu7Tob2mZhtc30EYCwbpP8lDs3IixoOHb+N32YZN5pTxpsHYqcN4vnripP2Z1AlWIkgHR/KsDS1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Master-Race\\Documents\\Repositorios\\dot-net\\CrudVillas\\CrudVillasAPI\\CrudVillasAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Master-Race\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.3\\microsoft.aspnetcore.jsonpatch.7.0.3.nupkg.sha512",
+    "C:\\Users\\Master-Race\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.3\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.3.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.3\\microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
+    "C:\\Users\\Master-Race\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Master-Race\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Master-Race\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
