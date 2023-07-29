@@ -115,8 +115,8 @@ namespace CrudVillasAPI.Controllers
 
             var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
             villa.Name = villaDto.Name;
-            villa.Ocupantes = villaDto.Ocupantes;
-            villa.MetrosCuadrados = villaDto.MetrosCuadrados;
+            villa.Occupants = villaDto.Occupants;
+            villa.SquareMeter = villaDto.SquareMeter;
 
             return NoContent();
         }
