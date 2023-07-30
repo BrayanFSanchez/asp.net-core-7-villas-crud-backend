@@ -1,9 +1,11 @@
 ﻿using CrudVillasAPI.Data;
+using CrudVillasAPI.Models;
 using CrudVillasAPI.Models.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudVillasAPI.Controllers
 {
@@ -12,10 +14,12 @@ namespace CrudVillasAPI.Controllers
     public class VillaController : ControllerBase
     {
         private readonly ILogger<VillaController> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public VillaController(ILogger<VillaController> logger)
+        public VillaController(ILogger<VillaController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         [HttpGet]
@@ -25,7 +29,7 @@ namespace CrudVillasAPI.Controllers
         public ActionResult<IEnumerable<VillaDto>> GetVillas()
         {
             _logger.LogInformation("Todas las villas se están obteniendo");
-            return Ok(VillaStore.villaList);
+            return Ok(_db.Villas.ToList());
         }
 
         [HttpGet("id:int", Name="GetVilla")]
@@ -39,7 +43,8 @@ namespace CrudVillasAPI.Controllers
                 _logger.LogError("Error al traer la Villa con Id " + id);
                 return BadRequest();
             }
-            var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
+            // var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
+            var villa = _db.Villas.FirstOrDefault(x => x.Id == id);
 
             if (villa == null)
             {
@@ -60,7 +65,7 @@ namespace CrudVillasAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            if(VillaStore.villaList.FirstOrDefault(v=>v.Name.ToLower() == villaDto.Name.ToLower()) != null)
+            if(_db.Villas.FirstOrDefault(v=>v.Name.ToLower() == villaDto.Name.ToLower()) != null)
             {
                 ModelState.AddModelError("NameExist", "La villa con ese nombre ya existe");
                 return BadRequest(ModelState);
@@ -75,8 +80,19 @@ namespace CrudVillasAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
-            villaDto.Id = VillaStore.villaList.OrderByDescending(v => v.Id).FirstOrDefault().Id + 1;
-            VillaStore.villaList.Add(villaDto);
+            Villa model = new()
+            {
+                Name = villaDto.Name,
+                Detail = villaDto.Detail,
+                ImageUrl = villaDto.ImageUrl,
+                Occupants = villaDto.Occupants,
+                Fee = villaDto.Fee,
+                SquareMeter = villaDto.SquareMeter,
+                Amenity = villaDto.Amenity,
+            };
+
+            _db.Villas.Add(model);
+            _db.SaveChanges();
 
             return CreatedAtRoute("GetVilla", new { id = villaDto.Id }, villaDto);
         }
@@ -92,13 +108,14 @@ namespace CrudVillasAPI.Controllers
                 return BadRequest();
             }
 
-            var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
+            var villa = _db.Villas.FirstOrDefault(v => v.Id == id);
             if(villa == null)
             {
                 return NotFound();
             }
 
-            VillaStore.villaList.Remove(villa);
+            _db.Villas.Remove(villa);
+            _db.SaveChanges();
 
             return NoContent();
         }
@@ -113,10 +130,24 @@ namespace CrudVillasAPI.Controllers
                 return BadRequest();
             }
 
-            var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
-            villa.Name = villaDto.Name;
-            villa.Occupants = villaDto.Occupants;
-            villa.SquareMeter = villaDto.SquareMeter;
+            //var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
+            //villa.Name = villaDto.Name;
+            //villa.Occupants = villaDto.Occupants;
+            //villa.SquareMeter = villaDto.SquareMeter;
+
+            Villa model = new()
+            {
+                Id = villaDto.Id,
+                Name = villaDto.Name,
+                Detail = villaDto.Detail,
+                ImageUrl = villaDto.ImageUrl,
+                Occupants = villaDto.Occupants,
+                Fee = villaDto.Fee,
+                SquareMeter = villaDto.SquareMeter,
+                Amenity = villaDto.Amenity,
+            };
+            _db.Villas.Update(model);
+            _db.SaveChanges();
 
             return NoContent();
         }
@@ -131,14 +162,43 @@ namespace CrudVillasAPI.Controllers
                 return BadRequest();
             }
 
-            var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
+            var villa = _db.Villas.AsNoTracking().FirstOrDefault(v => v.Id == id);
 
-            patchDto.ApplyTo(villa, ModelState);
+            VillaDto villaDto = new()
+            {
+                Id = villa.Id,
+                Name = villa.Name,
+                Detail = villa.Detail,
+                ImageUrl = villa.ImageUrl,
+                Occupants = villa.Occupants,
+                Fee = villa.Fee,
+                SquareMeter = villa.SquareMeter,
+                Amenity = villa.Amenity,
+            };
+
+            if(villa == null) return BadRequest();
+
+            patchDto.ApplyTo(villaDto, ModelState);
 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            Villa model = new()
+            {
+                Id = villaDto.Id,
+                Name = villaDto.Name,
+                Detail = villaDto.Detail,
+                ImageUrl = villaDto.ImageUrl,
+                Occupants = villaDto.Occupants,
+                Fee = villaDto.Fee,
+                SquareMeter = villaDto.SquareMeter,
+                Amenity = villaDto.Amenity,
+            };
+
+            _db.Villas.Update(model);
+            _db.SaveChanges();
 
             return NoContent();
         }
