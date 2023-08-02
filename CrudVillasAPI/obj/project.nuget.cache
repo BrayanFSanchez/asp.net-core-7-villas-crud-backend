@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1a61t5CkQjQ8XRdmPRSKTP89Dd+IsAiy7gwKY3WQCJ/o2p3bwcnTNG++8ts3cHEnGo0iY+XgrLZ5t2J6WeMJ/A==",
+  "dgSpecHash": "+FMUA4LzDW+/o210fHWnMIEQJl3Pj4p0IejaTFDAP4iAxLMchDa2KU+nX1pq6wtEETxS6Y3uvqxybchCCcmNDA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Master-Race\\Documents\\Repositorios\\dot-net\\CrudVillas\\CrudVillasAPI\\CrudVillasAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Master-Race\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Master-Race\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Master-Race\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
